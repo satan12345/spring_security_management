@@ -1,0 +1,12 @@
+com\itheima\service\RoleService.class
+com\itheima\dao\UserDao.class
+com\itheima\service\UserService.class
+com\itheima\service\impl\RoleServiceImpl.class
+com\itheima\dao\RoleDao.class
+com\itheima\service\impl\UserServiceImpl.class
+com\itheima\controller\OrderController.class
+com\itheima\domain\SysRole.class
+com\itheima\domain\SysUser.class
+com\itheima\controller\RoleController.class
+com\itheima\controller\UserController.class
+com\itheima\controller\ProductController.class

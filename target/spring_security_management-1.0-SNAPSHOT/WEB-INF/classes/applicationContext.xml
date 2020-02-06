@@ -15,12 +15,11 @@
 			    http://www.springframework.org/schema/tx/spring-tx.xsd
 			    http://www.springframework.org/schema/mvc
 			    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql:///security_authority"/>
+        <property name="url" value="jdbc:mysql://192.168.9.223/security_authority"/>
         <property name="username" value="root"/>
-        <property name="password" value="root"/>
+        <property name="password" value="ablejava"/>
     </bean>
 
     <bean class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -39,5 +38,5 @@
 
     <tx:annotation-driven/>
 
-
+    <import resource="spring-security.xml"/>
 </beans>
