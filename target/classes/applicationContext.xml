@@ -30,7 +30,9 @@
         <property name="basePackage" value="com.itheima.dao"/>
     </bean>
 
-    <context:component-scan base-package="com.itheima.service"/>
+    <context:component-scan base-package="com.itheima" >
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
+    </context:component-scan>
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
