@@ -78,6 +78,12 @@
             <!--</security:user-service>-->
         </security:authentication-provider>
     </security:authentication-manager>
+    <!--开启权限控制的注解 注解写在那个容器对象中  注解配置也要写在那个容器配置中
+    secured-annotations="enabled security内部的权限控制注解开关
+    pre-post-annotations="enabled" spring指定的权限控制注解开关]
+    jsr250-annotations="enabled" 开启java250注解支持
+    -->
+    <security:global-method-security jsr250-annotations="enabled" secured-annotations="enabled" pre-post-annotations="enabled"/>
 
     <bean class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" id="bCryptPasswordEncoder"></bean>
 
