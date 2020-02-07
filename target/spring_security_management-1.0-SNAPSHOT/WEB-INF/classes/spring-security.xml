@@ -59,10 +59,12 @@
         <security:logout logout-url="/logout" logout-success-url="/login.jsp"></security:logout>
         <!--关闭CSRF-->
         <security:csrf disabled="true"></security:csrf>
+
+        <security:remember-me data-source-ref="dataSource" ></security:remember-me>
     </security:http>
 
     <!--设置Spring Security认证用户信息的来源
-    spring-security默认必须是加密的 加上(noop)表示不加密认证
+    spring-security默认必须是加密的 加上{noop}表示不加密认证
     -->
     <security:authentication-manager>
 

@@ -3,6 +3,8 @@ package com.itheima.controller;
 import com.itheima.domain.SysUser;
 import com.itheima.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,6 +46,9 @@ public class UserController {
 
     @RequestMapping("/addRoleToUser")
     public String addRoleToUser(Integer[] ids, Integer userId){
+        //从后台获取当前登录用户的用户名
+        SecurityContextHolder.getContext().getAuthentication().getName();
+        ((User)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
         userService.addRoleToUser(userId, ids);
         return "redirect:toAddRolePage?success="+true+"&id="+userId;
     }

@@ -39,7 +39,9 @@ public class UserServiceImpl implements UserService {
 //        sysRole.setRoleName("ROLE_USER");
 //        sysUser.getRoles().add(sysRole);
 //        User user=new User(sysUser.getUsername(),"{noop}"+sysUser.getPassword(),sysUser.getRoles());
-        User user=new User(sysUser.getUsername(),sysUser.getPassword(),sysUser.getRoles());
+        User user=new User(sysUser.getUsername(),sysUser.getPassword(),
+                sysUser.getStatus()==0,true,true,true,
+                sysUser.getRoles());
         return user;
     }
 
